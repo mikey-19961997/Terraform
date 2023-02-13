@@ -4,3 +4,8 @@ resource "aws_vpc" "myvpc" {
         Name = "mikey-vpc"
     }
 }
+
+resource "aws_subnet" "firstsubnet" {
+    vpc.id = aws_vpc.myvpc.id
+    cidr_block = "192.168.1.0/24"
+}
