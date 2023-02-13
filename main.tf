@@ -1,3 +1,6 @@
-resource "aws_s3_bucket" "first_bucket" {
-    bucket = "mikey-bucket123"
+resource "aws_vpc" "myvpc" {
+    cidr_block = "192.168.0.0/16"
+    tags = {
+        Name = "mikey-vpc"
+    }
 }
