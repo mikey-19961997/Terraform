@@ -18,6 +18,6 @@ resource "aws_instance" "prac" {
   key_name = geethu
 
   tags = {
-    Name = "HelloWorld"
+    Name = "mikey-1"
   }
 }
