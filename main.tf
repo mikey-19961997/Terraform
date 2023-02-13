@@ -8,4 +8,7 @@ resource "aws_vpc" "myvpc" {
 resource "aws_subnet" "firstsubnet" {
     vpc.id = aws_vpc.myvpc.id
     cidr_block = "192.168.1.0/24"
+    tags = {
+        Name = "subnet1"
+    }
 }
