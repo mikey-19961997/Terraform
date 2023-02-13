@@ -13,7 +13,7 @@ resource "aws_subnet" "first-subnet" {
     }
 }
 
-resource "aws_subnet" "myvpc" {
+resource "aws_subnet" "second-subnet" {
     vpc_id = "aws_vpc.myvpc.id"
     cidr_block = "192.168.2.0/24"
     tags = {
