@@ -32,6 +32,7 @@ resource "aws_security_group" "my-sg" {
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
   }
+}
 
 resource "aws_instance" "prac" {
     ami = "ami-0557a15b87f6559cf"
