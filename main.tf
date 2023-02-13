@@ -1,22 +1,16 @@
-resource "aws_vpc" "myvpc" {
-    cidr_block = "192.168.0.0/16"
-    tags = {
-        Name = "mikey-vpc"
-    }
-}
+data "aws_ami" "ubuntu" {
+  most_recent = true
 
-resource "aws_subnet" "first-subnet" {
-    vpc_id = aws_vpc.myvpc.id
-    cidr_block = "192.168.1.0/24"
-    tags = {
-        Name = "subnet1"
-    }
-}
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
 
-resource "aws_subnet" "second-subnet" {
-    vpc_id = aws_vpc.myvpc.id
-    cidr_block = "192.168.2.0/24"
-    tags = {
-        Name = "subnet2"
-    }
+  resource "aws_instance" "web" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
 }
