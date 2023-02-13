@@ -19,4 +19,7 @@ resource "aws_instance" "prac" {
     subnet_id = aws_subnet.firstsubnet.id
     associate_public_ip_address = true
     key_name = "geethu"
+    tags = {
+        Name = "mikey-1"
+    }
 }
