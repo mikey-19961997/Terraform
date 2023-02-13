@@ -14,7 +14,7 @@ resource "aws_subnet" "firstsubnet" {
 }
 
 resource "aws_security_group" "my-sg" {
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.myvpc.id
   tags = {
     Name = "mikey-sg"
   }
