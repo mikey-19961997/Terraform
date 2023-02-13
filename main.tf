@@ -16,6 +16,6 @@ resource "aws_subnet" "firstsubnet" {
 resource "aws_instance" "prac" {
     ami = "ami-0557a15b87f6559cf"
     instance_type = "t2.micro"
-    subnet_id = "aws_subnet.firstsubnet.id"
+    subnet_id = aws_subnet.firstsubnet.id
     key_name = "geethu"
 }
