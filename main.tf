@@ -1,3 +1,3 @@
 resource "aws_s3_bucket" "first_bucket" {
-    bucket = "mikey_bucket"
+    bucket = "mikey_bucket1"
 }
