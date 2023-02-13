@@ -1,14 +1,5 @@
-data "aws_ami" "ubuntu" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-}
-
-  resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu.id
+resource "aws_instance" "web" {
+  ami           = "ami-0557a15b87f6559cf"
   instance_type = "t2.micro"
 
   tags = {
