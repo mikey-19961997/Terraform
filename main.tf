@@ -13,6 +13,26 @@ resource "aws_subnet" "firstsubnet" {
     }
 }
 
+resource "aws_security_group" "my-sg" {
+  vpc_id      = aws_vpc.main.id
+  tags = {
+    Name = "mikey-sg"
+  }
+
+  ingress {
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = [aws_vpc.myvpc.cidr_block]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
 resource "aws_instance" "prac" {
     ami = "ami-0557a15b87f6559cf"
     instance_type = "t2.micro"
