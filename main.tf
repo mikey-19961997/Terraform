@@ -28,12 +28,7 @@ resource "aws_route_table_association" "my-art" {
   route_table_id = aws_route_table.my-rt.id
 }
 
-resource "aws_main_route_table_association" "my-mrt" {
-  vpc_id         = aws_vpc.myvpc.id
-  route_table_id = aws_route_table.my-rt.id
-}
-
-resource "aws_default_security_group" "my-sg" {
+resource "aws_security_group" "my-sg" {
   vpc_id      = aws_vpc.myvpc.id
   tags = {
     Name = "mikey-sg"
@@ -71,7 +66,7 @@ resource "aws_instance" "prac" {
     instance_type = "t2.micro"
     subnet_id = aws_subnet.firstsubnet.id
     associate_public_ip_address = true
-    vpc_security_group_ids = [aws_default_security_group.my-sg.id]
+    vpc_security_group_ids = [aws_security_group.my-sg.id]
     key_name = "geethumikey"
     tags = {
         Name = "mikey-1"
