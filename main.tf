@@ -61,10 +61,13 @@ resource "aws_key_pair" "mykey" {
 }
 
 resource "aws_instance" "myinstance" {
-  ami = "ami-0f9bd9098aca2d42b"
+  ami = "ami-0557a15b87f6559cf"
   associate_public_ip_address = true
   instance_type = "t2.micro"
   key_name = aws_key_pair.mykey.id
   subnet_id = aws_subnet.first-subnet.id
   vpc_security_group_ids = [aws_security_group.my-sg.id]
+  tags = {
+    Name = "mikey-2"
+  }
 }
