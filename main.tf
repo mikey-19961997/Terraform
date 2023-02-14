@@ -66,5 +66,5 @@ resource "aws_instance" "myinstance" {
   instance_type = "t2.micro"
   key_name = aws_key_pair.mykey.id
   subnet_id = aws_subnet.first-subnet.id
-  vpc_security_group_ids = "aws_security_group.my-sg.id"
+  vpc_security_group_ids = [aws_security_group.my-sg.id]
 }
