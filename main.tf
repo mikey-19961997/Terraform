@@ -61,13 +61,18 @@ resource "aws_internet_gateway" "my-igw" {
   }
 }
 
+resource "aws_key_pair" "my-key" {
+  key_name   = "geethumikey"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDO+NT3Go8C0VZlji8AsFfYgDxli78BjJeY/+QX716inzpwNOYvRF1ciDEJkeR0fz8892MmBOMOsjcQP6f9MUU4Vm0FHPnKzRpbJFgXdToWDY+KXUs7GFKS5pYyJMG8rc8meqExKb6WkVVuzO2nnk3VMQQnfkNDPQ6idGGfoh/PBXiAT1K93nYUl9+p2MLSg2glEUQA4TsPACw8YvAoQ+eQZuN3MM2uWBQC0I0TVDZ30ZidOg3H08d77muaEiB+GUbDYx4Kp3wK4uXyKySes1jKCPzyXKbQr26SyYIfT5tZ+bk4naZrV6Vn6V/KuQFAjKDzBSGXYs6gwylR4mRfapDxhdM1dQw2jHk1QM8K9IlZw06yc01jtxHlx37PzPm6NeHTlrXBJWIaueAbZA0NOAbhaWbBugyDhMHlITBR/a6JM7CwBKLba7cQGs4SYBynWsEN+I4h3AyOLzZCXXcPpzF9NEW0J2vLucSu89543icuTRzU9+Qw69B0GsI74BW6thk= mikey@LAPTOP-08N4NDS4"
+}
+
 resource "aws_instance" "prac" {
     ami = "ami-0557a15b87f6559cf"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.firstsubnet.id
     associate_public_ip_address = true
     vpc_security_group_ids = [aws_default_security_group.my-sg.id]
-    key_name = "geethu"
+    key_name = "geethumikey"
     tags = {
         Name = "mikey-1"
     }
