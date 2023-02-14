@@ -23,6 +23,7 @@ resource "aws_route_table" "my-rt" {
   }
   route {
     cidr_block = "192.168.0.0/16"
+    vpc_id = aws_vpc.myvpc.id
   }
 }
 
