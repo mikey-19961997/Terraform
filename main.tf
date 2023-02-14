@@ -34,6 +34,13 @@ resource "aws_security_group" "my-sg" {
   }
 }
 
+resource "aws_internet_gateway" "my-igw" {
+  vpc_id = aws_myvpc.id
+  tags = {
+    Name = mike-igw
+  }
+}
+
 resource "aws_instance" "prac" {
     ami = "ami-0557a15b87f6559cf"
     instance_type = "t2.micro"
