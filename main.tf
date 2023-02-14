@@ -60,7 +60,7 @@ resource "aws_instance" "prac" {
     instance_type = "t2.micro"
     subnet_id = aws_subnet.firstsubnet.id
     associate_public_ip_address = true
-    key_name = "geethu"
+    key_name = "mikey"
     tags = {
         Name = "mikey-1"
     }
