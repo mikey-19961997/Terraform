@@ -28,6 +28,11 @@ resource "aws_route_table_association" "my-art" {
   route_table_id = aws_route_table.my-rt.id
 }
 
+resource "aws_main_route_table_association" "my-mrt" {
+  vpc_id         = aws_vpc.myvpc.id
+  route_table_id = aws_route_table.my-rt.id
+}
+
 resource "aws_security_group" "my-sg" {
   vpc_id      = aws_vpc.myvpc.id
   tags = {
