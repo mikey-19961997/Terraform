@@ -35,7 +35,7 @@ resource "aws_security_group" "my-sg" {
 }
 
 resource "aws_internet_gateway" "my-igw" {
-  vpc_id = aws_myvpc.id
+  vpc_id = aws_vpc.myvpc.id
   tags = {
     Name = mike-igw
   }
