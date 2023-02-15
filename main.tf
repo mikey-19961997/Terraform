@@ -28,7 +28,7 @@ resource "aws_route_table" "my-rt" {
   }
 }
 resource "aws_route_table_association" "my-art" {
-  subnet_id = aws_subnet.subnets[count.index]
+  subnet_id = aws_subnet.subnets[count.index].id
   route_table_id = aws_route_table.my-rt.id
 }
 resource "aws_security_group" "my-sg" {
@@ -60,7 +60,7 @@ resource "aws_instance" "myinstance" {
   associate_public_ip_address = true
   instance_type = "t2.micro"
   key_name = aws_key_pair.mykey.id
-  subnet_id = aws_subnet.subnets[count.index]
+  subnet_id = aws_subnet.subnets[count.index].id
   vpc_security_group_ids = [aws_security_group.my-sg.id]
   tags = {
     Name = var.instance_name[count.index]
