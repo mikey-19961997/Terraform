@@ -6,5 +6,5 @@ vpc_details = {
 }
 
 subnet_details = {
-    Name = ["mikey1","mikey2","mikey3","mikey4"]
+    Name = ["m1","m2","m3","m4"]
 }
