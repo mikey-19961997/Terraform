@@ -1,5 +1,5 @@
 resource "aws_vpc" "myvpc" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.cidr_block
   enable_dns_hostnames = "true"
   tags = {
     Name = "mikey-vpc"
@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "my-igw" {
 resource "aws_subnet" "subnets" {
   count = 5
   vpc_id = aws_vpc.myvpc.id
-  cidr_block = cidrsubnet("10.0.0.0/16", 8, 4)
+  cidr_block = cidrsubnet(var.cidr_block, 8, count.index)
   availability_zone = var.azs[count.index]
   tags = {
     Name = var.sub_name[count.index]
