@@ -19,6 +19,7 @@ resource "aws_subnet" "secondsubnet" {
   tags = {
     Name = "subnet2"
   }
+  depends_on = aws_subnet.firstsubnet
 }
 
 resource "aws_subnet" "thirdsubnet" {
