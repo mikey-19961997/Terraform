@@ -56,7 +56,7 @@ resource "aws_key_pair" "mykey" {
 
 resource "aws_instance" "myinstance" {
   count = 5
-  ami = "ami-0f9bd9098aca2d42b"
+  ami = "ami-00eeedc4036573771"
   associate_public_ip_address = true
   instance_type = "t2.micro"
   key_name = aws_key_pair.mykey.id
