@@ -1,22 +1,12 @@
-variable "region" {
-    type = string
-    default = "us-east-1"
+variable "vpc_details" {
+    type = object ({
+        Name = string
+        cidr_block = string
+    })
 }
 
-variable "cidr_block" {
-    type = string
-    default = "10.0.0.0/16"
+variable "subnet_details" {
+    type = object ({
+        Name = list(string)
+    })
 }
-
-variable "sub_name" {
-    type = list(string)
-}
-
-variable "azs" {
-    type = list(string)
-}
-
-variable "instance_name" {
-    type = list(string)
-}
-

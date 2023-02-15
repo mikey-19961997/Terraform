@@ -1,5 +1,8 @@
-region = "us-east-2"
-cidr_block = "10.0.0.0/16"
-sub_name = ["s1","s2","s3","s4","s5"]
-azs = ["us-east-2a","us-east-2a","us-east-2b","us-east-2b","us-east-2c"]
-instance_name = ["mikey-1","mikey-2","mikey-3","mikey-4","mikey-5"]
+vpc_details = {
+    Name = "mikey-vpc"
+    cidr_block = "192.168.0.0/16"
+}
+
+subnet_details = {
+    Name = ["mikey1","mikey2","mikey3","mikey4"]
+}
