@@ -23,7 +23,3 @@ variable "azs" {
 variable "instance_name" {
     type = list(string)
 }
-
-variable "subnet_ids" {
-    type = list(string)
-}
