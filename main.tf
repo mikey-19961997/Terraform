@@ -28,7 +28,7 @@ resource "aws_route_table" "my-rt" {
   }
 }
 resource "aws_route_table_association" "my-art" {
-  subnet_id = aws_subnet.subnets.id[count.index]
+  subnet_id = aws_subnet.subnets[count.index]
   route_table_id = aws_route_table.my-rt.id
 }
 resource "aws_security_group" "my-sg" {
