@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "my-igw" {
 resource "aws_subnet" "subnets" {
   count = 5
   vpc_id = aws_vpc.myvpc.id
-  cidr_block = var.sub_cidr_block[count.index]
+  cidr_block = cidrsubnet(10.0.0.0/16, 8, 5)
   availability_zone = var.azs[count.index]
   tags = {
     Name = var.sub_name[count.index]

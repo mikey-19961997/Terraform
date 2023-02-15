@@ -8,10 +8,6 @@ variable "cidr_block" {
     default = "10.0.0.0/16"
 }
 
-variable "sub_cidr_block" {
-    type = list(string)
-}
-
 variable "sub_name" {
     type = list(string)
 }
@@ -23,3 +19,4 @@ variable "azs" {
 variable "instance_name" {
     type = list(string)
 }
+
