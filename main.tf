@@ -68,6 +68,6 @@ resource "aws_instance" "myinstance" {
   subnet_id = aws_subnet.first-subnet.id
   vpc_security_group_ids = [aws_security_group.my-sg.id]
   tags = {
-    Name = "mikey-2"
+    Name = "mikey-1"
   }
 }
