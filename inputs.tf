@@ -19,3 +19,7 @@ variable "sub_name" {
 variable "azs" {
     type = list(string)
 }
+
+variable "instance_name" {
+    type = list(string)
+}
