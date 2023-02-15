@@ -28,7 +28,7 @@ resource "aws_route_table" "my-rt" {
   }
 }
 resource "aws_route_table_association" "my-art" {
-  count = 5
+  count = length(var.azs)
   subnet_id = element(aws_subnet.subnets[*].id, count.index)
   route_table_id = aws_route_table.my-rt.id
 }
@@ -56,7 +56,7 @@ resource "aws_key_pair" "mykey" {
 }
 
 resource "aws_instance" "myinstance" {
-  count = 5
+  count = length(var.azs)
   ami = "ami-00eeedc4036573771"
   associate_public_ip_address = true
   instance_type = "t2.micro"
