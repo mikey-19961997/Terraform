@@ -30,6 +30,9 @@ resource "aws_subnet" "thirdsubnet" {
   tags = {
     Name = "subnet3"
   }
+  depends_on = [
+    aws_subnet.secondsubnet
+  ]
 }
 
 resource "aws_subnet" "fourthsubnet" {
@@ -38,4 +41,7 @@ resource "aws_subnet" "fourthsubnet" {
   tags = {
     Name = "subnet4"
   }
+  depends_on = [
+    aws_subnet.thirdsubnet
+  ]
 }
