@@ -15,3 +15,7 @@ variable "sub_cidr_block" {
 variable "sub_name" {
     type = list(string)
 }
+
+variable "azs" {
+    type = list(string)
+}
