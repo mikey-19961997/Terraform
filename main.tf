@@ -60,7 +60,7 @@ resource "aws_instance" "myinstance" {
   associate_public_ip_address = true
   instance_type = "t2.micro"
   key_name = aws_key_pair.mykey.id
-  subnet_id = aws_subnet.subnets.*.id[count.index]
+  subnet_id = aws_subnet.subnets[count.index].id
   vpc_security_group_ids = [aws_security_group.my-sg.id]
   tags = {
     Name = var.instance_name[count.index]
