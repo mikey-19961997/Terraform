@@ -1,3 +1,3 @@
 output "vpc_name" {
-    value = aws_vpc.myvpc.Name
+    value = aws_vpc.myvpc.name
 }
