@@ -13,3 +13,7 @@ output "subnets" {
 output "subnetcount" {
     value = length(var.subnet_details.Name)
 }
+
+output "region" {
+    value = var.region
+}
