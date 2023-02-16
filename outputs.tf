@@ -7,5 +7,9 @@ output "vpc_name" {
 }
 
 output "subnets" {
-    value = aws_subnet.subnets.cidrsubnet(var.vpc_details.cidr_block,8,count.index)
+    value = aws_subnet.subnets
+}
+
+output "subnetcount" {
+    value = length(var.subnet_details.Name)
 }
