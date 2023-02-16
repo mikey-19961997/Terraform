@@ -7,5 +7,5 @@ output "vpc_name" {
 }
 
 output "subnets" {
-    value = aws_subnet.subnets.cidr_block
+    value = aws_subnet.subnets
 }
