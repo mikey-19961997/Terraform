@@ -3,7 +3,7 @@ output "vpc_id" {
 }
 
 output "vpc_name" {
-    value = aws_vpc.myvpc.tags
+    value = var.vpc_details.Name
 }
 
 output "subnets" {
